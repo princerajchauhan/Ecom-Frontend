@@ -1,0 +1,340 @@
+.nav-main {
+    display: flex;
+    /* grid-template-columns: 1fr 1fr; */
+    justify-content: space-between;
+    padding: 10px 50px;
+    align-items: center;
+    gap: 10%;
+    background-color: lightcoral;
+}
+
+
+.brand-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.logo>h3{
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    animation: logoColor 3s linear infinite;
+}
+
+.search{
+    width: 100%;
+    display: flex;
+    background-color: azure;
+    align-items: center;
+    border-radius: 5px;
+    position: relative;
+}
+
+.icons{
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.search>input{
+    width: 100%;
+    padding: 5px 5px;
+    border: none;
+    outline: none;
+    margin: 0;
+    background-color: transparent;
+}
+.searchValue{
+    position: absolute;
+    top: 40px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 3px gray;
+    width: 100%;
+    padding: 10px 10px 0 10px;
+    z-index: 22;
+}
+.click-search{
+    cursor: pointer;
+    position: relative;
+    width: fit-content;
+}
+
+.click-search::before{
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    border-bottom: 2px solid red;
+    transition: 0.3s linear;
+}
+
+.click-search:hover::before{
+    width: 100%;
+}
+
+.nav-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 40px;
+    margin: auto;
+}
+
+.hoverBorder.active {
+    color: greenyellow;
+}
+
+.cart-trolley{
+    color: purple;
+    font-weight: bold;
+}
+
+.cart-link.active {
+    color: blue;
+}
+
+.nav-menu>a {
+    text-decoration: none;
+    color: aquamarine;
+    font-weight: 600;
+}
+.nav-menu>a:hover{
+    color: yellow;
+}
+
+.userName{
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    padding: 0;
+    position: relative;
+}
+
+.dropdown{
+    position: absolute;
+    top: 48px;
+    left: -25px;
+    background-color: rgb(234, 231, 231);
+    border-radius: 5px;
+    color: black;
+    padding-left: 0;
+    z-index: 2;
+}
+
+.admin{
+    cursor: pointer;
+}
+
+.admin:hover{
+    filter: drop-shadow(0 0 3px white);
+}
+
+.dropdown::before{
+    position: absolute;
+    content: '';
+    transform: rotate(45deg);
+    top: -0.6rem;
+    right: 2.8rem;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(234, 231, 231);
+}
+
+.dropdown>li{
+    margin: 10px;
+    list-style: none;
+    display: flex;
+    text-align: left;
+    align-items: center;
+    gap: 5px;
+    font-weight: 0;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.dropdown>li:nth-child(1){
+    padding-bottom: 2px;
+    color: orangered;
+    border-bottom: 1px solid gray;
+}
+
+.dropdown>li:nth-child(2):hover{
+    color: teal;
+}
+
+.hoverBorder {
+    position: relative;
+    width: fit-content;
+    padding: 2px 5px;
+}
+
+.hoverBorder::before{
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    width: 0;
+    border-bottom: 2px solid crimson;
+    transition: 0.3s linear;
+}
+
+.hoverBorder:hover::before{
+    width: 100%;
+}
+
+
+.cart-link {
+    position: relative;
+    width: fit-content;
+}
+
+.cart-item {
+    position: absolute;
+    top: -5px;
+    color: red;
+    border-radius: 50%;
+    padding: 0 1px;
+    font-weight: 600;
+}
+
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition:  all 0.4s ease-in-out;
+    transition:  all 0.4s ease-in-out;
+    background-color: blue;
+
+}
+
+
+@media screen and (max-width: 1050px) {
+    .nav-main{
+        gap: 3%;
+    }
+    .nav-menu{
+        gap: 25px;
+    }
+}
+
+@media screen and (max-width: 930px) {
+    .hamburger{
+        display: block;
+        border: 3px solid white;
+        padding: 0 5px;
+    }
+    .nav-menu{
+        display: none;
+    }
+    .hamburger.hamActive .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.hamActive .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.hamActive .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav-menu{
+        z-index: 111;
+        position: fixed;
+        top: -100%;
+        right: 1px;
+        width: 40%;
+        gap: 0;
+        flex-direction: column;
+        background-color: rgb(180, 125, 185);
+        border-radius: 5px;
+        transition: 0.7s linear;
+        padding: 10px;
+    }
+    .nav-link{
+       left: 50%;
+       transform: translateX(-50%);
+    }
+
+    .nav-main{
+        gap: 10%;
+    }
+    .nav-menu.hamActive{
+        display: block;
+        top: 58px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    ::placeholder{
+        font-size: 14px;
+    }
+    .nav-main{
+        padding: 10px;
+        gap: 2%;
+    }
+    .brand-search {
+        gap: 10px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .brand-search{
+        flex-direction: column;
+        gap: 5px;
+    }
+    .nav-main{
+        align-items: flex-end;
+        padding-top: 5px;
+    }
+    .nav-menu.hamActive{
+        top: 102px;
+    }
+
+    .logo>h3{
+        font-size: 35px;
+    }
+
+    @keyframes logoColor {
+        0%{
+            color: red;
+        }
+        10%{
+            color: green;
+        }
+        20%{
+            color: yellow;
+        }
+        30%{
+            color: cyan;
+        }
+        40%{
+            color: orange;
+        }
+        50%{
+            color: orchid;
+        }
+        60%{
+            color: purple;
+        }
+        70%{
+            color: brown;
+        }
+        80%{
+            color: blue;
+        }
+        90%{
+            color: teal;
+        }
+    }
+
+}

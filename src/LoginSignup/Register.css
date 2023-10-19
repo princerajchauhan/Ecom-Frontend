@@ -1,0 +1,80 @@
+
+
+.register{
+    background: linear-gradient(to top right, rgb(28, 239, 239), rgb(76, 139, 232), rgb(141, 7, 141));
+    filter: brightness(0.9);
+    /* height: 100vh; */
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.register>form{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 30px 60px;
+    border-radius: 8px;
+}
+
+.register > form > input {
+    border: none;
+    outline: none;
+    margin-top: 5px;
+    border-bottom: 2px solid black;
+    margin-bottom: 10px;
+}
+
+.registStyle{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    padding: 0 25px;
+}
+.registStyle > h2{
+    position: relative;
+    color: transparent;
+    padding-bottom: 5px;
+}
+
+.registStyle > h2::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: purple;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid red;
+    animation: animate 3s linear infinite;
+}
+
+@keyframes animate {
+    0%{
+        width: 0;
+    }   
+    70%{
+        width: 105%;
+    }
+}
+
+.register>form>input[type="submit"]{
+    border: none;
+    padding: 10px 20px;
+    font-size: 24px;
+    border-radius: 10px;
+    background-color: teal;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+.register>form>input[type="submit"]:hover{
+    color: teal;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+

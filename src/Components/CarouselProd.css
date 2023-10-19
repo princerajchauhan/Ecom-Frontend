@@ -1,0 +1,122 @@
+.carousel-container{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 90vw;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.carousel-heading{
+    display: grid;
+    place-items: center;
+}
+
+.carousel-heading > h2{
+    font-size: 30px;
+    position: relative;
+    color: transparent;
+    padding-bottom: 10px;
+}
+
+.carousel-heading>h2::before{
+    content: attr(data-text);
+    position: absolute;
+    width: 0;
+    height: 100%;
+    white-space: nowrap;
+    border-right: 3px solid green;
+    overflow: hidden;
+    animation: carouselHead 3.6s linear infinite;
+}
+
+@keyframes carouselHead {
+    0%{
+        width: 0;
+        color: brown;
+    }
+    15%{
+        color: yellow;
+    }
+    30%{
+        color: blue;
+    }
+    45%{
+        color: crimson;
+    }
+    60%{
+        color: black;
+    }
+    75%{
+        color: olivedrab;
+    }
+    70%{
+        width: 100%;
+    }
+    90%{
+        color: palevioletred;
+    }
+}
+
+
+.wrapper{
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5PX;
+    margin: 0 15px;
+}
+
+.wrapper>img{
+    border-radius: 5px;
+    height: 194.425px;
+    cursor: pointer;
+    transition: 0.3s linear;
+    background-position: center;
+}
+.wrapper>img:hover{
+    filter: brightness(0.7);
+}
+/* 
+.carousel-image{
+    width: 100%;
+    height:45%;
+}
+
+.carousel-image > img{
+    width: 100%;
+    border-radius: 5px;
+    height: 100%;
+    cursor: pointer;
+} */
+
+.card-text{
+    font-weight: 600;
+    color: teal;
+}
+
+.carousel-btn{
+    margin: auto;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 600;
+    background-color: black;
+    color: white;
+    transition: 0.3s linear;
+    margin-bottom: 5px;
+}
+.carousel-btn:hover{
+    background-color: transparent;
+    color: green;
+    border-color: green;
+    box-shadow: 0 0 10px green;
+}
+
+
+@media screen and (max-width:450px) {
+    .carousel-heading > h2{
+        font-size: 24px;
+    }
+}

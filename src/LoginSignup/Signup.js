@@ -23,7 +23,7 @@ const Signup = () => {
         event.preventDefault()
         console.log("Form Submitted...")
         // console.log(value)
-        axios.post("http://localhost:4005/api/register", value)
+        axios.post("https://prince-ecom-backend.onrender.com/api/register", value)
         .then(res => {
             if (!res.data.msg2) {
                 toast(res.data.msg, { type: "error", theme: "colored" });

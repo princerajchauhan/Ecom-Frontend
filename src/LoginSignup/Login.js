@@ -21,7 +21,7 @@ const Login = () => {
     const submitForm = (e) => {
         e.preventDefault()
         // console.log(value)
-        axios.post("http://localhost:4005/api/login", value)
+        axios.post("https://prince-ecom-backend.onrender.com/api/login", value)
             .then(res => {
                 if (!res.data.msg2) {
                     toast(res.data.msg, { type: "error", theme: "colored" });

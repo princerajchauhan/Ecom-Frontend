@@ -154,6 +154,7 @@
 @media screen and (max-width: 600px) {
     .cart-main {
         padding: 30px 10px;
+        align-items: center;
     }
     .cart-image {
         width: 20vw;

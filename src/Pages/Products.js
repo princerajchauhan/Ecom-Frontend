@@ -17,6 +17,7 @@ const Products = () => {
     const [filterBrand, setFilterBrand] = useState('')
 
     useEffect(() => {
+        window.scrollTo(0,0)
         dispatch(getData())
         // eslint-disable-next-line
     }, [])

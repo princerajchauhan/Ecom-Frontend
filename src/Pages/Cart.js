@@ -14,6 +14,7 @@ const Cart = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
+        window.scrollTo(0,0)
         if (localStorage.getItem('id')) {
             dispatch(getCartProduct(localStorage.getItem('id')))
         }
@@ -51,9 +52,6 @@ const Cart = () => {
 
     const payAmount = async() =>{
         const stripe = await loadStripe('pk_test_51O2pl0SGM01vn0zuhMB8YaDsKBiV9XDJdbkITDDoOcMtOzO2LahZILM1gTDmKRpa7yYi14RuYBNealmsubNfp3aW004UlMoyaG');
-        // JSON.parse(localStorage.getItem("allProducts")).map(prod =>{
-        //     console.log(prod[1])
-        // })
         const body = {
             products: JSON.parse(localStorage.getItem("allProducts"))
         }

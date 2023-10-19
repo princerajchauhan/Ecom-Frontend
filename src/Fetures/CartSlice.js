@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const getCartProduct = createAsyncThunk("cartProduct", async (id) => {
-    const response = await axios.post(`http://localhost:4005/api/getcart/`, { id }).then(res => res.data).catch(er => console.log(er))
+    const response = await axios.post(`https://prince-ecom-backend.onrender.com/api/getcart/`, { id }).then(res => res.data).catch(er => console.log(er))
     return response
 })
 
@@ -17,12 +17,12 @@ export const addToCart = createAsyncThunk('addCart', async ({ id, productId, ele
         data[cartitemIndex][1] += 1
     }
     localStorage.setItem('allProducts', JSON.stringify(data))
-    const response = await axios.post(`http://localhost:4005/api/addtocart`, { id, productId }).then(res => res.data).catch(err => console.log(err))
+    const response = await axios.post(`https://prince-ecom-backend.onrender.com/api/addtocart`, { id, productId }).then(res => res.data).catch(err => console.log(err))
     return response
 })
 
 export const removeFromCart = createAsyncThunk('removecart', async ({ id, productId }) => {
-    const response = await axios.post(`http://localhost:4005/api/removeproduct`, { id, productId }).then(res => res.data).catch(err => console.log(err))
+    const response = await axios.post(`https://prince-ecom-backend.onrender.com/api/removeproduct`, { id, productId }).then(res => res.data).catch(err => console.log(err))
     return response
 })
 

@@ -2,12 +2,12 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const getData = createAsyncThunk("getAllData", () =>{
-    const response = axios.get("http://localhost:4005/api/products").then(res => res.data).catch(er => console.log(er))
+    const response = axios.get("https://prince-ecom-backend.onrender.com/api/products").then(res => res.data).catch(er => console.log(er))
     return response
 })
 
 export const getSingleProduct = createAsyncThunk("getSingleProduct", async (id) =>{
-    const response = await axios.get(`http://localhost:4005/api/products/${id}`).then(res => res.data).catch(er => console.log(er))
+    const response = await axios.get(`https://prince-ecom-backend.onrender.com/api/products/${id}`).then(res => res.data).catch(er => console.log(er))
     return response
 })
 

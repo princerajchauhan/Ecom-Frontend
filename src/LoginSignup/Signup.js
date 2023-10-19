@@ -1,9 +1,10 @@
 import "./Register.css"
 import React, { useState } from 'react'
 import axios from 'axios'
+import {toast} from "react-toastify"
 import { Link, useNavigate } from "react-router-dom"
 
-const Signup = ({updateUser} ) => {
+const Signup = () => {
     const [value, setValue] = useState({
         name: '',
         phone: '',
@@ -24,12 +25,19 @@ const Signup = ({updateUser} ) => {
         // console.log(value)
         axios.post("http://localhost:4005/api/register", value)
         .then(res => {
-            alert(res.data.msg)
-            // if (res.data.detail) {
-            //     updateUser(res.data.detail)
-            //     localStorage.setItem("Token",res.data.token)
-            //     navigate("/")
-            // }
+            if (!res.data.msg2) {
+                toast(res.data.msg, { type: "error", theme: "colored" });
+            }
+            else {
+                toast(res.data.msg, { type: "success", theme: "colored" });
+                if (res.data.token) {
+                    // setUserName(res.data.name)
+                    localStorage.setItem("Token", res.data.token)
+                    localStorage.setItem("name", res.data.name)
+                    localStorage.setItem("id", res.data.id)
+                    navigate("/")
+                }
+            }
         })
         .catch(err => console.log(err))
         setValue({

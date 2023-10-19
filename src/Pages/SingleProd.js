@@ -20,6 +20,7 @@ const SingleProd = () => {
 
     useEffect(() => {
         dispatch(getSingleProduct(id))
+        // eslint-disable-next-line
     }, [id])
 
 

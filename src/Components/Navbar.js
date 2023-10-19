@@ -13,7 +13,7 @@ import { getData } from '../Fetures/GetDataSlice';
 
 const Navbar = () => {
 
-    const { isLoading, cart } = useSelector(state => state.cart)
+    const { cart } = useSelector(state => state.cart)
     const { products } = useSelector(state => state.products)
 
     const [search, setSearch] = useState()
@@ -31,10 +31,12 @@ const Navbar = () => {
         if (localStorage.getItem('id')) {
             dispatch(getCartProduct(localStorage.getItem('id')))
         }
+        // eslint-disable-next-line
     }, [localStorage.getItem('id')])
 
     useEffect(() => {
         dispatch(getData())
+        // eslint-disable-next-line
     }, [])
 
     useEffect(() => {

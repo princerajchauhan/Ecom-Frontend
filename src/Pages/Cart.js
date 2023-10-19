@@ -12,12 +12,12 @@ const Cart = () => {
     // const {isLoading, cartProduct} = useSelector(state => state.products)
 
     const dispatch = useDispatch()
-    // console.log(cartData)
 
     useEffect(() => {
         if (localStorage.getItem('id')) {
             dispatch(getCartProduct(localStorage.getItem('id')))
         }
+        // eslint-disable-next-line
     }, [localStorage.getItem('id')])
 
     const increment = (id) => {
@@ -135,7 +135,7 @@ const Cart = () => {
                         <h5>Total Amount</h5>
                         <h6>{<CurrencyFormat price={cartData.totalAmount - 20000} />}</h6>
                     </div>
-                    <div><button onClick={payAmount}>Checkout</button></div>
+                    <div className='checkout'><button onClick={payAmount}>Place Your Order</button></div>
                 </div>
             </div>
         }

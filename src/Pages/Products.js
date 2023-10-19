@@ -18,6 +18,7 @@ const Products = () => {
 
     useEffect(() => {
         dispatch(getData())
+        // eslint-disable-next-line
     }, [])
 
     const filterFunction = () => {

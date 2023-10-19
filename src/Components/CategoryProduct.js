@@ -16,6 +16,7 @@ const CategoryProduct = () => {
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(getData())
+        // eslint-disable-next-line
     }, [])
     return (
         <div className='categoryproduct-main'>

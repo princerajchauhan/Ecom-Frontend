@@ -115,12 +115,14 @@ const CartSlice = createSlice({
             state.subTotal = 0
             JSON.parse(localStorage.getItem('allProducts')).map(ele => {
                 state.subTotal += ele[1]
+                return null
             })
         },
         totAmount: (state) => {
             state.totalAmount = 0
             JSON.parse(localStorage.getItem('allProducts')).map(ele => {
                 state.totalAmount += ele[0].price * ele[1]
+                return null
             })
         },
         empytCart: (state) => {

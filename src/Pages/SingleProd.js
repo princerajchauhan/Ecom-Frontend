@@ -34,8 +34,8 @@ const SingleProd = () => {
                             <img src={singleProduct.image} alt={singleProduct.name} />
                             <div className="cart-btn">
                                 <button onClick={() => {
-                                    localStorage.getItem("Token") ? dispatch(addToCart({ id: localStorage.getItem("id"), productId: singleProduct._id, elem: singleProduct })) : toast("Login needed to add products", { type: "warning", theme: "colored" });
-                                    localStorage.getItem("Token") && toast("items added to cart", { type: "success", theme: "colored" })
+                                    localStorage.getItem("Token") && localStorage.getItem("id") ? dispatch(addToCart({ id: localStorage.getItem("id"), productId: singleProduct._id, elem: singleProduct })) : toast("Login needed to add products", { type: "warning", theme: "colored" });
+                                    localStorage.getItem("Token") && localStorage.getItem("id") && toast("items added to cart", { type: "success", theme: "colored" })
                                 }}>Add To Cart</button>
                                 <button>Buy Now</button>
                             </div>

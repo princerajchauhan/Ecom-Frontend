@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { getData } from '../Fetures/GetDataSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import TopImages from './BigBillion'
+import Spinner from '../Spinner/Spinner'
 
 const Welcome = () => {
 
@@ -41,7 +42,7 @@ const Welcome = () => {
                     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
                 <div className="carousel-inner">
-                    {isLoading ? <h1>Loading....</h1> :
+                    {isLoading ? <Spinner /> :
                         topimg && topimg.map(elem => {
                             return (
                                 <div className="carousel-item active" data-bs-interval="3000" key={elem.id}>

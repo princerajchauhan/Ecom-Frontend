@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { addToCart } from '../Fetures/CartSlice';
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import Spin from '../Spinner/Spin';
 
 const CarouselProducts = ({ heading }) => {
 
@@ -48,7 +49,7 @@ const CarouselProducts = ({ heading }) => {
                 </div>
                 <Carousel responsive={responsive} autoPlay={true} autoPlaySpeed={1500} infinite={true}>
                     {
-                        isLoading ? <h3>Loading.........</h3> :
+                        isLoading ? <Spin /> :
                             products && Array.from(products).sort(() => Math.random() - Math.random()).map(elem => {
                                 return (
                                     // <div key={elem.id} className='wrapper'>
@@ -73,8 +74,8 @@ const CarouselProducts = ({ heading }) => {
                                             <h5 className="card-title">{elem.name.slice(0,15)}</h5>
                                             <p className="card-text">Price: {<CurrencyFormat price={elem.price} />}</p>
                                             <button className="carousel-btn" onClick={() => {
-                                                localStorage.getItem("Token")?dispatch(addToCart({ id: localStorage.getItem("id"), productId: elem._id, elem })):toast("Login needed to add products", { type: "warning", theme: "colored" });
-                                                localStorage.getItem("Token") && toast("items added to cart", { type: "success", theme: "colored" })
+                                                localStorage.getItem("Token") && localStorage.getItem("id") ?dispatch(addToCart({ id: localStorage.getItem("id"), productId: elem._id, elem })):toast("Login needed to add products", { type: "warning", theme: "colored" });
+                                                localStorage.getItem("Token") && localStorage.getItem("id")  && toast("items added to cart", { type: "success", theme: "colored" })
                                             }}> Add To Cart</button>
                                         </div>
                                     </div>

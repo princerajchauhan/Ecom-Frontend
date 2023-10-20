@@ -29,8 +29,8 @@ const CategoryProduct = () => {
                                 <h5>{ele.name.slice(0, 30)}</h5>
                                 <p><span style={{ fontWeight: 600, color: "blue" }}>Price:</span> {<CurrencyFormat price={ele.price} />}</p>
                                 <button className='product-btn' onClick={() => {
-                                    localStorage.getItem("Token") ? dispatch(addToCart({ id: localStorage.getItem("id"), productId: ele._id, elem: ele })) : toast("Login needed to add products", { type: "warning", theme: "colored" });
-                                    localStorage.getItem("Token") && toast("items added to cart", { type: "success", theme: "colored" })
+                                    localStorage.getItem("Token") && localStorage.getItem("id") ? dispatch(addToCart({ id: localStorage.getItem("id"), productId: ele._id, elem: ele })) : toast("Login needed to add products", { type: "warning", theme: "colored" });
+                                    localStorage.getItem("Token") && localStorage.getItem("id") && toast("items added to cart", { type: "success", theme: "colored" })
                                 }}>Add To Cart</button>
                             </div>
                         </div>

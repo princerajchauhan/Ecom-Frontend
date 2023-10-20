@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-import { FiShoppingCart } from "react-icons/fi";
+import { FaCartShopping } from "react-icons/fa6";
 import { GoSearch } from "react-icons/go";
 import { FaUserCircle } from "react-icons/fa";
 import { GoSignOut } from "react-icons/go";
@@ -56,7 +56,7 @@ const Navbar = () => {
                 console.log("click")
             })
         })
-    },[showham])
+    }, [showham])
 
     const handleChange = (data) => {
         setSearch(data.toLowerCase())
@@ -120,8 +120,8 @@ const Navbar = () => {
                         </div>
                     }
                     <NavLink to='/cart' className='cart-link nav-link'>
-                        <FiShoppingCart className='cart-trolley' />{
-                            cart.user ? <span className='cart-item'>{JSON.parse(localStorage.getItem('allProducts')).length}</span> : <span className='cart-item'>0</span>}
+                        <FaCartShopping className='cart-trolley' />
+                        {cart.user ? <span className='cart-item'>{JSON.parse(localStorage.getItem('allProducts')).length}</span> : <span className='cart-item'>0</span>}
                     </NavLink>
                 </ul>
                 <div className="hamburger">

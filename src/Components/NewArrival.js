@@ -6,6 +6,7 @@ import './NewArrival.css'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import CurrencyFormat from './CurrencyFormat'
+import Spin from '../Spinner/Spin';
 
 const NewArrival = () => {
     // const { isLoading, products } = useContext(Data)
@@ -52,7 +53,7 @@ const NewArrival = () => {
             </div>
             {/* <div className="arrival-wrapper"> */}
             <Carousel responsive={responsive}  className="arrival-wrapper">
-                {isLoading ? <h1>Loading.....</h1> :
+                {isLoading ? <Spin /> :
                     products && Array.from(products).sort(() => Math.random() - Math.random()).map(elem => {
                         return (
                             <div key={elem.id} className='arrivalProducts'>

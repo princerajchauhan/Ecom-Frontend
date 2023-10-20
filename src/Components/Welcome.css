@@ -150,11 +150,11 @@
     .carousel-inner {
         width: fit-content;
     }
-
+    
     .carousel-item {
         width: 100%;
     }
-
+    
     .welcome-store>h1 {
         margin-left: 20px;
     }
@@ -162,5 +162,13 @@
     .carousel-item>img {
         width: 100%;
         margin: auto;
+    }
+}
+@media screen and (max-width:400px) {
+    .welcome {
+        width: 95vw;
+    }
+    .welcome-data{
+        width: 80vw;
     }
 }

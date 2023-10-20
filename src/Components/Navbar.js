@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { FaCartShopping } from "react-icons/fa6";
 import { GoSearch } from "react-icons/go";
-import { FaUserCircle } from "react-icons/fa";
 import { GoSignOut } from "react-icons/go";
 import "./Nav.css"
 import { useDispatch, useSelector } from 'react-redux';
@@ -112,7 +111,7 @@ const Navbar = () => {
                     <NavLink to='/products' className="hoverBorder nav-link">Products</NavLink>
                     <NavLink to='/contact' className="hoverBorder nav-link">Contact</NavLink>
                     {!localStorage.getItem('name') ? <NavLink to='/login' className="hoverBorder nav-link">Login</NavLink> :
-                        <div className="userName"><FaUserCircle className='admin' onClick={() => setShowProfile(!showProfile)} />
+                        <div className="userName"><span className='admin' onClick={() => setShowProfile(!showProfile)} >{localStorage.getItem("name")[0].toUpperCase()}</span>
                             {showProfile && <ul className="dropdown">
                                 <li>Hi, {localStorage.getItem('name')}</li>
                                 <li onClick={signout}>Signout <GoSignOut /></li>

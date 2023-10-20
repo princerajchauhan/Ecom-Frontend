@@ -6,6 +6,7 @@ import CurrencyFormat from './CurrencyFormat'
 import { toast } from 'react-toastify'
 import "./CategoryProd.css"
 import { addToCart } from '../Fetures/CartSlice'
+import Load from '../Spinner/Load'
 
 const CategoryProduct = () => {
     const { isLoading, products } = useSelector(state => state.products)
@@ -21,7 +22,7 @@ const CategoryProduct = () => {
     return (
         <div className='categoryproduct-main'>
             {
-                isLoading ? <h2>Loading....</h2> :
+                isLoading ? <Load /> :
                     products.filter(ele => ele.category === cat).map(ele => {
                         return <div className='cateProd-main' key={ele._id}>
                             <img src={ele.image} alt="" onClick={() => navigate(`/singleProduct/${ele._id}`)} />

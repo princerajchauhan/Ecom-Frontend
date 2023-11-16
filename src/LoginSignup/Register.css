@@ -64,13 +64,14 @@
 
 .register>form>input[type="submit"]{
     border: none;
-    padding: 10px 20px;
-    font-size: 24px;
+    padding: 8px 20px;
+    font-size: 20px;
     border-radius: 10px;
-    background-color: teal;
+    background-color: rgb(30, 156, 206);
     color: white;
-    font-weight: bold;
+    font-weight: 600;
     cursor: pointer;
+    letter-spacing: 1px;
     transition: all 0.3s linear;
 }
 .register>form>input[type="submit"]:hover{

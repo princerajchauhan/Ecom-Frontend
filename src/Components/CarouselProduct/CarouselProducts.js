@@ -3,12 +3,12 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { useDispatch, useSelector } from 'react-redux';
 import "./CarouselProd.css"
-import CurrencyFormat from './CurrencyFormat';
+import CurrencyFormat from '../CurrencyFormat';
 import { useNavigate } from 'react-router-dom';
-import { addToCart } from '../Fetures/CartSlice';
+import { addToCart } from '../../Fetures/CartSlice';
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import Spin from '../Spinner/Spin';
+import Spin from '../../Spinner/Spin';
 
 const CarouselProducts = ({ heading }) => {
 

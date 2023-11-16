@@ -5,6 +5,8 @@ import 'react-toastify/dist/ReactToastify.css'
 import axios from 'axios'
 import React, { useState } from 'react'
 import { Link, useNavigate } from "react-router-dom"
+import Footer from "../Components/Footer/Footer"
+import Navbar from "../Components/Navbar/Navbar"
 
 const Login = () => {
     const [value, setValue] = useState({
@@ -46,26 +48,30 @@ const Login = () => {
     }
 
     return (
-        <div className='login'>
+        <>
+            <Navbar />
+            <div className='login'>
 
-            <form onSubmit={submitForm}>
-                <div className="logstyle">
-                    <h2 data-text="Login...">Login...</h2>
-                </div>
-                <label htmlFor="">Email</label>
-                <input type="email" name='email' value={value.email} onChange={clickHandle} required /><br />
+                <form onSubmit={submitForm}>
+                    <div className="logstyle">
+                        <h2 data-text="Login...">Login...</h2>
+                    </div>
+                    <label htmlFor="">Email</label>
+                    <input type="email" name='email' value={value.email} onChange={clickHandle} required /><br />
 
-                <label htmlFor="">Password</label>
-                <input type="password" name='password' autoComplete="off" value={value.password} onChange={clickHandle} required /><br />
+                    <label htmlFor="">Password</label>
+                    <input type="password" name='password' autoComplete="off" value={value.password} onChange={clickHandle} required /><br />
 
-                <label className="forgot">Forgot Password</label>
+                    <label className="forgot">Forgot Password</label>
 
-                <button type='submit' className="submitBtn">Sign in</button>
+                    <button type='submit' className="submitBtn">Sign in</button>
 
-                <p>Not registered yet? <Link to="/register">Click Here</Link></p>
+                    <p>Not registered yet? <Link to="/register">Click Here</Link></p>
 
-            </form>
-        </div>
+                </form>
+            </div>
+            <Footer />
+        </>
     )
 }
 

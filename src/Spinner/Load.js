@@ -3,7 +3,7 @@ import loading from "./loading.gif"
 
 const Load = () => {
     return (
-        <div style={{ width:"100vw", display: 'flex', justifyContent:'center', alignItems:"flex-start" }}>
+        <div style={{ width:"100vw", display: 'flex', justifyContent:'center', alignItems:"center", height:"100%" }}>
                 <img src={loading} alt="loading" />
             </div>
     )

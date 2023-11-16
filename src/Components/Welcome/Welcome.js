@@ -1,25 +1,25 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './Welcome.css'
 // import Data from '../Context/ContextData'
 import { useNavigate } from 'react-router-dom'
-import { getData } from '../Fetures/GetDataSlice'
-import { useDispatch, useSelector } from 'react-redux'
-import TopImages from './BigBillion'
-import Spinner from '../Spinner/Spinner'
+// import { getData } from '../Fetures/GetDataSlice'
+import { useSelector } from 'react-redux'
+import TopImages from '../BigBillion'
+import Spinner from '../../Spinner/Spinner'
 
 const Welcome = () => {
 
     // const { isLoading, products } = useContext(Data)
 
     const { isLoading } = useSelector(state => state.products)
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
 
     const [topimg] = useState(TopImages.sort(() => Math.random() - Math.random()).slice(0, 3))
 
-    useEffect(() => {
-        dispatch(getData())
-        // eslint-disable-next-line
-    }, [])
+    // useEffect(() => {
+    //     dispatch(getData())
+    //     // eslint-disable-next-line
+    // }, [])
 
     const navigate = useNavigate()
 

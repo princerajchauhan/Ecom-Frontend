@@ -1,16 +1,36 @@
-import React from 'react'
-import Welcome from '../Components/Welcome'
-import NewArrival from '../Components/NewArrival'
-import Services from '../Components/Services'
-import CarouselProducts from '../Components/CarouselProducts'
+import React, { useEffect } from 'react'
+import Welcome from '../Components/Welcome/Welcome'
+import NewArrival from '../Components/NewArrival/NewArrival'
+import Services from '../Components/Services/Services'
+import CarouselProducts from '../Components/CarouselProduct/CarouselProducts'
+import { useDispatch, useSelector } from 'react-redux'
+import { getData } from '../Fetures/GetDataSlice'
+import LogoLoad from '../Spinner/LogoLoad'
+import Navbar from '../Components/Navbar/Navbar'
+import Footer from '../Components/Footer/Footer'
 
-const Home = () =>{
-    return(
+const Home = () => {
+    const { isLoading } = useSelector(state => state.products)
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(getData())
+        // eslint-disable-next-line
+    }, [])
+    // console.log(isLoading)
+    return (
         <>
-            <Welcome />
-            <NewArrival />
-            <CarouselProducts heading="Try Other Products_"/>
-            <Services />
+            {
+                isLoading ? <LogoLoad /> :
+                    <>
+                        <Navbar />
+                        <Welcome />
+                        <NewArrival />
+                        <CarouselProducts heading="Try Other Products_" />
+                        <Services />
+                        <Footer />
+                    </>
+            }
         </>
     )
 }

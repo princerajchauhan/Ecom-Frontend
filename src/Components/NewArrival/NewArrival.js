@@ -5,8 +5,8 @@ import 'react-multi-carousel/lib/styles.css';
 import './NewArrival.css'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import CurrencyFormat from './CurrencyFormat'
-import Spin from '../Spinner/Spin';
+import CurrencyFormat from '../CurrencyFormat'
+import Spin from '../../Spinner/Spin';
 
 const NewArrival = () => {
     // const { isLoading, products } = useContext(Data)
@@ -62,7 +62,7 @@ const NewArrival = () => {
                                 </div>
                                 <span className='arrival-category'>{elem.category}</span>
                                 <div>
-                                    <p onClick={() => navigate(`/singleproduct/${elem.id}`)}>{elem.name.slice(0, 10)}</p>
+                                    <p onClick={() => navigate(`/singleproduct/${elem.id}`)}>{elem.name.split(" ")[0]}</p>
                                     <p>{<CurrencyFormat price={elem.price} />}</p>
                                 </div>
                             </div>

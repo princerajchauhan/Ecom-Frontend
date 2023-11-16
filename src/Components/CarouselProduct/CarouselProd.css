@@ -115,6 +115,11 @@
 }
 
 
+.react-multi-carousel-list{
+    z-index: 10;
+    color: red;
+}
+
 @media screen and (max-width:450px) {
     .carousel-heading > h2{
         font-size: 24px;

@@ -1,8 +1,10 @@
 import "./Register.css"
 import React, { useState } from 'react'
 import axios from 'axios'
-import {toast} from "react-toastify"
+import { toast } from "react-toastify"
 import { Link, useNavigate } from "react-router-dom"
+import Footer from "../Components/Footer/Footer"
+import Navbar from "../Components/Navbar/Navbar"
 
 const Signup = () => {
     const [value, setValue] = useState({
@@ -24,22 +26,22 @@ const Signup = () => {
         console.log("Form Submitted...")
         // console.log(value)
         axios.post("https://prince-ecom-backend.onrender.com/api/register", value)
-        .then(res => {
-            if (!res.data.msg2) {
-                toast(res.data.msg, { type: "error", theme: "colored" });
-            }
-            else {
-                toast(res.data.msg, { type: "success", theme: "colored" });
-                if (res.data.token) {
-                    // setUserName(res.data.name)
-                    localStorage.setItem("Token", res.data.token)
-                    localStorage.setItem("name", res.data.name)
-                    localStorage.setItem("id", res.data.id)
-                    navigate("/")
+            .then(res => {
+                if (!res.data.msg2) {
+                    toast(res.data.msg, { type: "error", theme: "colored" });
                 }
-            }
-        })
-        .catch(err => console.log(err))
+                else {
+                    toast(res.data.msg, { type: "success", theme: "colored" });
+                    if (res.data.token) {
+                        // setUserName(res.data.name)
+                        localStorage.setItem("Token", res.data.token)
+                        localStorage.setItem("name", res.data.name)
+                        localStorage.setItem("id", res.data.id)
+                        navigate("/")
+                    }
+                }
+            })
+            .catch(err => console.log(err))
         setValue({
             name: '',
             phone: '',
@@ -50,31 +52,35 @@ const Signup = () => {
     }
 
     return (
-        <div className='register'>
-            <form onSubmit={submitForm} method='POST'>
+        <>
+            <Navbar />
+            <div className='register'>
+                <form onSubmit={submitForm} method='POST'>
 
-                <div className="registStyle">
-                    <h2 data-text="Register Here">Register Here</h2>
-                </div>
+                    <div className="registStyle">
+                        <h2 data-text="Register Here">Register Here</h2>
+                    </div>
 
-                <label htmlFor="">Name</label>
-                <input type="text" name='name' value={value.name} onChange={clickHandle} required /><br />
+                    <label htmlFor="">Name</label>
+                    <input type="text" name='name' value={value.name} onChange={clickHandle} required /><br />
 
-                <label htmlFor="">Phone</label>
-                <input type="number" name='phone' value={value.phone} onChange={clickHandle} required /><br />
+                    <label htmlFor="">Phone</label>
+                    <input type="number" name='phone' value={value.phone} onChange={clickHandle} required /><br />
 
-                <label htmlFor="">Email</label>
-                <input type="email" name='email' value={value.email} onChange={clickHandle} required /><br />
+                    <label htmlFor="">Email</label>
+                    <input type="email" name='email' value={value.email} onChange={clickHandle} required /><br />
 
-                <label htmlFor="">Password</label>
-                <input type="password" name='password' autoComplete="off" value={value.password} onChange={clickHandle} required /><br />
+                    <label htmlFor="">Password</label>
+                    <input type="password" name='password' autoComplete="off" value={value.password} onChange={clickHandle} required /><br />
 
-                <input type="Submit" value="Register" />
+                    <input type="Submit" value="Register" />
 
-                <p>ALready registered? <Link to="/login">Click Here</Link></p>
+                    <p>ALready registered? <Link to="/login">Click Here</Link></p>
 
-            </form>
-        </div>
+                </form>
+            </div>
+            <Footer />
+        </>
     )
 }
 

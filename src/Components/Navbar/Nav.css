@@ -426,15 +426,15 @@
         }
 
         60% {
-            color: purple;
+            color: rgb(217, 59, 217);
         }
 
         70% {
-            color: brown;
+            color: rgb(196, 103, 103);
         }
 
         80% {
-            color: blue;
+            color: rgb(0, 157, 255);
         }
 
         90% {

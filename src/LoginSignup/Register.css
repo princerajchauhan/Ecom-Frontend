@@ -26,6 +26,7 @@
     outline: none;
     margin-top: 5px;
     border-bottom: 2px solid black;
+    margin-bottom: 10px;
 }
 
 .registStyle{
@@ -74,7 +75,6 @@
     cursor: pointer;
     letter-spacing: 1px;
     transition: all 0.3s linear;
-    margin-bottom: 10px;
 }
 .register>form>input[type="submit"]:hover{
     color: teal;
@@ -85,5 +85,11 @@
 @media screen and (max-width: 500px) {
     .register>form{
         padding: 20px 45px;
+    }
+    .register > form > input{
+        margin-bottom: 0;
+    }
+    .register>form>input[type="submit"]{
+        margin-bottom: 10px;
     }
 }

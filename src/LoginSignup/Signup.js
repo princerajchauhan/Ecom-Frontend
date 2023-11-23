@@ -55,7 +55,7 @@ const Signup = () => {
         <>
             <Navbar />
             <div className='register'>
-                <form onSubmit={submitForm} method='POST'>
+                <form onSubmit={submitForm} method='POST' className="glow">
 
                     <div className="registStyle">
                         <h2 data-text="Register Here">Register Here</h2>

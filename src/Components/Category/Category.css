@@ -3,7 +3,7 @@
     display: flex;
     width: 100vw;
     justify-content: space-evenly;
-    margin-top: 61.99px;
+    margin-top: 61px;
 }
 
 .category-main>div {
@@ -17,7 +17,28 @@
     font-weight: 600;
 }
 
+@media screen and (max-width:1040px) {
+    .category-main{
+        margin-top: 60px;
+    }
+}
+
+@media screen and (max-width:900px) {
+    .category-main{
+        margin-top: 59px;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .category-main{
+        margin-top: 57px;
+    }
+}
+
 @media screen and (max-width:500px) {
+    .category-main{
+        margin-top: 104px;
+    }
     .category-main>div>a {
         font-size: 1rem;
     }

@@ -52,7 +52,7 @@ const Login = () => {
             <Navbar />
             <div className='login'>
 
-                <form onSubmit={submitForm}>
+                <form onSubmit={submitForm} className="glow">
                     <div className="logstyle">
                         <h2 data-text="Login...">Login...</h2>
                     </div>

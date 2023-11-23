@@ -5,7 +5,7 @@
     padding: 10px 50px;
     align-items: center;
     gap: 10%;
-    background-color: lightcoral;
+    background-color: #394657;
     position: fixed;
     top: 0;
     width: 100%;
@@ -36,19 +36,19 @@
 
 @keyframes logospan {
     0% {
-        color: green;
+        color: rgb(39, 239, 39);
     }
 
     20% {
-        color: purple;
+        color: rgb(194, 29, 194);
     }
 
     40% {
-        color: black;
+        color: white;
     }
 
     60% {
-        color: blue;
+        color: rgb(60, 139, 218);
     }
 
     80% {
@@ -56,7 +56,7 @@
     }
 
     90% {
-        color: brown;
+        color: rgb(236, 119, 119);
     }
 }
 
@@ -266,7 +266,7 @@
     margin: 5px auto;
     -webkit-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
-    background-color: blue;
+    background-color: white;
 
 }
 

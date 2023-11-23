@@ -1,5 +1,6 @@
 .login{
-    background: linear-gradient(to top right, rgb(28, 239, 239), rgb(76, 139, 232), rgb(141, 7, 141));
+    /* background: linear-gradient(to top right, rgb(28, 239, 239), rgb(76, 139, 232), rgb(141, 7, 141)); */
+    background-color: rgb(62, 56, 56);
     filter: brightness(0.9);
     /* height: 100vh; */
     padding: 20px 0;
@@ -15,6 +16,40 @@
     background-color: white;
     padding: 30px 60px;
     border-radius: 8px;
+    position: relative;
+}
+
+.glow::before, .glow::after{
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: -4px;
+    background: linear-gradient(45deg, #e6fb04, #00ff66, #00ffff, #ff6600, #ff00ff, 
+    #ff0099, #6e0dd0, #ff3300, #099fff, rgb(172, 75, 75));
+    background-size: 500%;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    animation: glowanimate 20s linear infinite;
+    border-radius: 8px;
+    z-index: -1;
+}
+
+@keyframes glowanimate {
+    0%{
+        background-position: 0 0;
+    }
+    50%{
+        background-position: 500% 0;
+    }
+    100%{
+        background-position: 0 0;
+    }
+    
+}
+
+.glow::after{
+    filter: blur(10px);
+    opacity: 0.99;
 }
 
 .logstyle{
@@ -73,12 +108,12 @@
 .submitBtn{
     border: none;
     margin-top: 40px;
-    padding: 8px 20px;
+    padding: 7px 20px;
     font-size: 20px;
-    border-radius: 10px;
-    background-color: cadetblue;
+    border-radius: 5px;
+    background-color: orange;
     color: white;
-    font-weight: 700;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.3s linear;
     position: relative;
@@ -90,28 +125,25 @@
 .submitBtn::before{
     content: '';
     position: absolute;
-    background-color: white;
+    background-color: teal;
     top: 0;
     left: 0;
-    right: 0;
-    height: 0;
+    height: 100%;
     width: 100%;
     z-index: -1;
     transform: translateX(-100%);
-    border-radius: 50%;
-    transition: 0.3s linear;
+    transition: 0.5s linear;
     
 }
 
 .submitBtn:hover::before{
     transform: translateX(0);
-    border-radius: 0;
     height: 100%;
 }
 
 .submitBtn:hover{
     box-shadow: 0 0 5px gray;
-    color: cadetblue;
+    /* color: cadetblue; */
 }
 
 .login>form > p{

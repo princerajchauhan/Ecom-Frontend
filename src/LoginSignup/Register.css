@@ -1,7 +1,8 @@
 
 
 .register{
-    background: linear-gradient(to top right, rgb(28, 239, 239), rgb(76, 139, 232), rgb(141, 7, 141));
+    /* background: linear-gradient(to top right, rgb(28, 239, 239), rgb(76, 139, 232), rgb(141, 7, 141)); */
+    background-color: rgb(62, 56, 56);
     filter: brightness(0.9);
     /* height: 100vh; */
     padding: 20px 0;
@@ -15,8 +16,9 @@
     display: flex;
     flex-direction: column;
     background-color: white;
-    padding: 30px 60px;
+    padding: 15px 60px;
     border-radius: 8px;
+    position: relative;
 }
 
 .register > form > input {

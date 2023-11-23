@@ -8,6 +8,7 @@ import { getData } from '../Fetures/GetDataSlice'
 import LogoLoad from '../Spinner/LogoLoad'
 import Navbar from '../Components/Navbar/Navbar'
 import Footer from '../Components/Footer/Footer'
+import VideoAds from '../Components/VideoAds/VideoAds'
 
 const Home = () => {
     const { isLoading } = useSelector(state => state.products)
@@ -27,6 +28,7 @@ const Home = () => {
                         <Welcome />
                         <NewArrival />
                         <CarouselProducts heading="Try Other Products_" />
+                        <VideoAds />
                         <Services />
                         <Footer />
                     </>

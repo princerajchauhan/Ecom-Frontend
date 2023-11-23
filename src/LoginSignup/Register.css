@@ -26,7 +26,6 @@
     outline: none;
     margin-top: 5px;
     border-bottom: 2px solid black;
-    margin-bottom: 10px;
 }
 
 .registStyle{
@@ -66,18 +65,25 @@
 
 .register>form>input[type="submit"]{
     border: none;
-    padding: 8px 20px;
+    padding: 7px 20px;
     font-size: 20px;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: rgb(30, 156, 206);
     color: white;
     font-weight: 600;
     cursor: pointer;
     letter-spacing: 1px;
     transition: all 0.3s linear;
+    margin-bottom: 10px;
 }
 .register>form>input[type="submit"]:hover{
     color: teal;
     background-color: rgba(0, 0, 0, 0.1);
 }
 
+
+@media screen and (max-width: 500px) {
+    .register>form{
+        padding: 20px 45px;
+    }
+}
